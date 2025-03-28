@@ -36,28 +36,17 @@ const changeDueMessage = (message) => {
   changeDue.innerText = `Status: ${message}`;
 };
 
-// strange problem:
-// If usedCoin.length is used in the for loop than the cid values are kept
-// right, but when cid.length is used than the cid array faces problem.
-// In both cases, the final change amount is not correct.
-
 const isChangeAvailable = (changeAmount) => {
   const changeBeforeUpdate = changeAmount;
-  let cidTemp = [];
+  usedCoin = JSON.parse(JSON.stringify(cid));
+  let cidTemp = JSON.parse(JSON.stringify(cid));
 
   for (let i = 0; i < usedCoin.length; i++) {
-    usedCoin[i] = cid[i];
     usedCoin[i][1] = 0;
-    // cidTemp[i] = cid[i];
-  }
-
-  for (let i = 0; i < cid.length; i++) {
-    alert(cid[i][1]);
   }
 
   for (let i = cidTemp.length - 1; i >= 0; i--) {
     if (cidTemp[i][1] === 0) {
-      // alert(cidTemp[i][1]);
       continue;
     } else if (changeAmount === 0) {
       break;
@@ -67,14 +56,11 @@ const isChangeAvailable = (changeAmount) => {
       usedCoin[i][1] = changeHere;
       changeAmount -= changeHere;
     } else {
-      alert("Hi!");
       changeAmount -= cidTemp[i][1];
       usedCoin[i][1] = cidTemp[i][1];
       cidTemp[i][1] = 0;
     }
   }
-
-  alert(changeAmount);
 
   if (changeAmount === 0.0) {
     cid = cidTemp;
@@ -96,7 +82,7 @@ const isDrawerEmpty = () => {
 const printChange = () => {
   usedCoin.forEach((element) => {
     if (element[1] !== 0) {
-      changeDue.innerText += `${element[0]}: ${element[1]}`;
+      changeDue.innerText += `\n${element[0]}: ${element[1]}`;
     }
   });
 };
