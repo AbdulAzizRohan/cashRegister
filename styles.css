@@ -1,0 +1,149 @@
+/* Base Styles */
+:root {
+  --bg-dark: #1e1e1e;
+  --bg-darker: #2c2c2c;
+  --accent-color: #ff7f50;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --border-color: #333;
+  --input-bg: #222;
+  --button-bg: #ff7f50;
+  --button-hover: #ff6347;
+  --positive: #4ade80;
+  --negative: #f87171;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Layout */
+.cash,
+.change-due,
+.purchase-btn,
+.cash-in-drawer {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.cash {
+  font-size: 32px;
+  font-weight: bold;
+  color: coral;
+}
+
+/* Input Styles */
+#cash {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+#cash:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.3);
+}
+
+/* Button Styles */
+.purchase-btn button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--button-bg);
+  color: black;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.purchase-btn button:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.01);
+}
+
+.purchase-btn button:active {
+  transform: scale(0.98);
+}
+
+/* Change Due Display */
+#change-due {
+  padding: 1rem;
+  background-color: var(--bg-darker);
+  border-radius: 4px;
+  border-left: 4px solid var(--accent-color);
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  min-height: 60px;
+  display: none;
+}
+
+/* Cash Drawer Display */
+.cash-in-drawer {
+  background-color: var(--bg-darker);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.cash-in-drawer p {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cash-in-drawer p:last-child {
+  border-bottom: none;
+}
+
+.cash-in-drawer span {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .cash,
+  .change-due,
+  .purchase-btn,
+  .cash-in-drawer {
+    max-width: 100%;
+  }
+}
+
+/* Utility Classes */
+.hidden {
+  display: none;
+}
+
+.success {
+  color: var(--positive);
+}
+
+.error {
+  color: var(--negative);
+}

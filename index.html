@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cash Register</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href=".favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon_io/site.webmanifest" />
+  </head>
+  <body>
+    <div class="cash">
+      <span id="cash-span">Price: </span>
+      <span id="price"></span>
+      <input type="number" id="cash" />
+    </div>
+    <div class="change-due" id="change-due"></div>
+    <div class="purchase-btn">
+      <button type="button" id="purchase-btn">Purchase</button>
+    </div>
+    <div class="cash-in-drawer">
+      <p>Penny: <span id="penny"></span></p>
+      <p>Nickel: <span id="nickel"></span></p>
+      <p>Dime: <span id="dime"></span></p>
+      <p>Quarter: <span id="quarter"></span></p>
+      <p>One: <span id="one"></span></p>
+      <p>Five: <span id="five"></span></p>
+      <p>Ten: <span id="ten"></span></p>
+      <p>Twenty: <span id="twenty"></span></p>
+      <p>One hundred: <span id="one-hundred"></span></p>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
